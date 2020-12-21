@@ -36,6 +36,7 @@ function App() {
       console.log(msg)
       updateSearching(false);
       updateChatting(true);
+      updateMessages([]);
     })
 
     socket.on('update users', users => {
@@ -56,6 +57,7 @@ function App() {
       socket.emit('leave chat')
       updateSearching(false);
       updateChatting(false);
+      updateMessages([]);
     })
   
     socket.on('typing', () => {
