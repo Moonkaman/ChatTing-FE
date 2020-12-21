@@ -42,7 +42,7 @@ const ChatView = props => {
       </Box>
       <Box alignSelf="flex-end" width="100vw" padding='20px' height="8%">
         <FormControl display="flex" justifyContent="space-between" height="100%">
-          <Button height="100%" minHeight='100%' colorScheme="red" onClick={props.disconnect}>Leave</Button>
+          <Button isDisabled={props.searching} height="100%" minHeight='100%' colorScheme="red" onClick={props.disconnect}>Leave</Button>
           <Textarea isDisabled={props.searching} height="100%" minHeight='100%' type="text" margin='0 10px 0 10px' value={messageText} onChange={handleChange} resize="none" placeholder="Type a message..." onKeyDown={handleKeyDown}/>
           {props.searching ? (
             <Button height="100%" minHeight='100%' colorScheme="blue" onClick={props.stopSearch}>Stop</Button>
